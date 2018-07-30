@@ -1,0 +1,4 @@
+npm i @angular/cli@1.7 -g
+ng new <PROJECT_NAME>
+cd <PROJECT_NAME>
+ng serve
