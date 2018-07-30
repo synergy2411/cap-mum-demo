@@ -1,3 +1,5 @@
+https://github.com/synergy2411/cap-mum-demo
+
 npm i @angular/cli@1.7 -g
 ng new <PROJECT_NAME>
 cd <PROJECT_NAME>
