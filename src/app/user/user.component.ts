@@ -11,6 +11,7 @@ export class UserComponent{
         alert(`${user.firstName} is working with ${user.company}!!!` );
     }
 
+    demo = "CurrentValue";
     user = {
         firstName : "Bill",
         lastName : "Gates",

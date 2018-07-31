@@ -5,26 +5,21 @@
 <li class="well">
     <div class="row">
         <div class="col-xs-2 col-sm-2 col-md-2">
-            <img [src]="user.image" class="img-responsive img-circle">
-            <br><br>
+            <app-user-img>
+                <img [src]="user.image" class="img-responsive img-circle">
+                <br><br>
 
-            <button class="btn btn-info btn-sm" (click)="moreInfo(user)">
-                More Info
-            </button>
+                <button class="btn btn-info btn-sm" (click)="moreInfo(user)">
+                    More Info
+                </button>
+                <br><br>
+            </app-user-img>
         </div>
         <div class="col-xs-10 col-sm-10 col-md-10">
-            <h2>{{ user.firstName }} {{ user.lastName }} </h2>
-            <p>Income :
-                <span [innerHTML]="user.income"></span>
-            </p>
-            <p>Date of Birth : {{ user.dob }}</p>
-            <em>Total Votes : {{ user.vote }}
-                <input type="number" [value]="user.vote" 
-                    class="form-control" 
-                    (change)="user.vote=$event.target.value">
-                <input type="number" [(ngModel)]="user.vote" 
-                    class="form-control">
-            </em>
+            <input type="text" [(ngModel)]="demo">
+            <app-user-info [user]="user" [demo]="demo">
+                <!-- <h2>Some Cool Contents....</h2> -->
+            </app-user-info>
         </div>
     </div>
 
