@@ -6,13 +6,16 @@ import {
   AfterViewChecked,
   AfterViewInit,
   OnDestroy,
-  SimpleChanges
+  SimpleChanges, 
+  ViewEncapsulation
 } from '@angular/core';
+import { User } from '../../model/user';
 
 @Component({
   selector: 'app-user-info',
   templateUrl: './user-info.component.html',
-  styleUrls: ['./user-info.component.css']
+  styleUrls: ['./user-info.component.css'],
+  encapsulation : ViewEncapsulation.None
 })
 export class UserInfoComponent implements OnInit,
   OnChanges,
@@ -21,8 +24,13 @@ export class UserInfoComponent implements OnInit,
   AfterViewChecked, AfterViewInit,
   OnDestroy {
 
-  @Input('user') user: any;
+  @Input('user') user: User;
   @Input("demo") demo: any;
+
+  myClasses = {
+    'feature' : false, 
+    'border' : true
+  }
 
   constructor() { console.log("constructor") }
   ngDoCheck() { console.log("ngDoCheck"); }

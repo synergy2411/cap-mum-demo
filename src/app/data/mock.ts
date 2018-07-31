@@ -1,4 +1,6 @@
-export const USER_DATA = {
+import { User } from "../model/user";
+
+export const USER_DATA : User [] = [{
     firstName : "Bill",
     lastName : "Gates",
     dob : new Date ("Dec 21, 1965"),
@@ -7,4 +9,22 @@ export const USER_DATA = {
     company : "Microsoft",
     image : "assets/images/users_images/bill.jpg",
     vote : 120
-}
+},{
+    firstName : "Steve",
+    lastName : "Jobs",
+    dob : new Date ("Jan 2, 1965"),
+    income : 0,
+    isWorking : false,
+    company : "Apple",
+    image : "assets/images/users_images/steve.png",
+    vote : 180
+},{
+    firstName : "Tim B.",
+    lastName : "Lee",
+    dob : new Date ("Aug 1, 1965"),
+    income : 40000,
+    isWorking : true,
+    company : "World Wide Web",
+    image : "assets/images/users_images/tim.jpg",
+    vote : 150
+}]

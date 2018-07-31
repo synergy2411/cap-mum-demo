@@ -1,12 +1,22 @@
 <h2>{{ user.firstName }} {{ user.lastName }} </h2>
-<p>Income :
+<p *ngIf="user.isWorking; else ElseTemplate">Income :
     <span [innerHTML]="user.income"></span>
 </p>
-<p>Date of Birth : {{ user.dob }}</p>
+<!-- Desugar ngIf -->
+<!-- <ng-template [ngIf]="user.isWorking">
+      <p> Income :   <span [innerHTML]="user.income"></span></p>
+</ng-template> -->
+
+<!-- <p [ngClass]="['feature', 'border']">Date of Birth : {{ user.dob }}</p> -->
+
+<!-- <p [ngClass]="{'feature' : true, 'border' : false}">Date of Birth : {{ user.dob }}</p> -->
+
+<p [ngClass]="myClasses">Date of Birth : {{ user.dob }}</p>
+
 <em>Total Votes : {{ user.vote }}
-    <input type="number" [value]="user.vote" 
-        class="form-control" 
-        (change)="user.vote=$event.target.value">
-    <input type="number" [(ngModel)]="user.vote" 
-        class="form-control">
+    <input type="number" [value]="user.vote" class="form-control" (change)="user.vote=$event.target.value">
+    <input type="number" [(ngModel)]="user.vote" class="form-control">
 </em>
+<ng-template #ElseTemplate>
+    <p>{{user.firstName }} is not Working now!</p>
+</ng-template>

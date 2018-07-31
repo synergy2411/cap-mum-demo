@@ -2,10 +2,12 @@
 <h2>User Component Loaded!</h2>
 
 <ul class="list-unstyled">
-<li class="well">
+<li class="well" *ngFor="let user of users; index as i; first as isFirst; last as isLast; even as isEven; odd as isOdd;">
     <div class="row">
         <div class="col-xs-2 col-sm-2 col-md-2">
+                
             <app-user-img>
+               
                 <img [src]="user.image" class="img-responsive img-circle">
                 <br><br>
 
@@ -16,7 +18,8 @@
             </app-user-img>
         </div>
         <div class="col-xs-10 col-sm-10 col-md-10">
-            <input type="text" [(ngModel)]="demo">
+                INDEX : {{ i }} isEven : {{ isEven }} isLast ?: {{ isLast }}
+            <!-- <input type="text" [(ngModel)]="demo"> -->
             <app-user-info [user]="user" [demo]="demo">
                 <!-- <h2>Some Cool Contents....</h2> -->
             </app-user-info>
