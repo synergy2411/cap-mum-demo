@@ -1,0 +1,33 @@
+<div class="container">
+<h2>User Component Loaded!</h2>
+
+<ul class="list-unstyled">
+<li class="well">
+    <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2">
+            <img [src]="user.image" class="img-responsive img-circle">
+            <br><br>
+
+            <button class="btn btn-info btn-sm" (click)="moreInfo(user)">
+                More Info
+            </button>
+        </div>
+        <div class="col-xs-10 col-sm-10 col-md-10">
+            <h2>{{ user.firstName }} {{ user.lastName }} </h2>
+            <p>Income :
+                <span [innerHTML]="user.income"></span>
+            </p>
+            <p>Date of Birth : {{ user.dob }}</p>
+            <em>Total Votes : {{ user.vote }}
+                <input type="number" [value]="user.vote" 
+                    class="form-control" 
+                    (change)="user.vote=$event.target.value">
+                <input type="number" [(ngModel)]="user.vote" 
+                    class="form-control">
+            </em>
+        </div>
+    </div>
+
+</li>
+</ul>
+</div>
