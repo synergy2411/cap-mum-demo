@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { USER_DATA } from '../data/mock';
 
 @Component({    
     selector : 'app-user',
@@ -12,14 +13,11 @@ export class UserComponent{
     }
 
     demo = "CurrentValue";
-    user = {
-        firstName : "Bill",
-        lastName : "Gates",
-        dob : new Date ("Dec 21, 1965"),
-        income : 50000,
-        isWorking : true,
-        company : "Microsoft",
-        image : "assets/images/users_images/bill.jpg",
-        vote : 120
+    user : any;
+
+    constructor(){}
+    ngOnInit(){
+        this.user = USER_DATA;
     }
+
 }

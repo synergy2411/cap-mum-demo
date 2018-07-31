@@ -3,7 +3,8 @@ import {
   OnChanges,
   AfterContentChecked,
   AfterContentInit,
-  AfterViewChecked, AfterViewInit,
+  AfterViewChecked,
+  AfterViewInit,
   OnDestroy,
   SimpleChanges
 } from '@angular/core';
@@ -21,20 +22,18 @@ export class UserInfoComponent implements OnInit,
   OnDestroy {
 
   @Input('user') user: any;
-  @Input("demo") demo : any;
+  @Input("demo") demo: any;
 
-  constructor() { }
-
-    ngDoCheck(){console.log("ngDoCheck");}
-  ngOnChanges(changes : SimpleChanges){
+  constructor() { console.log("constructor") }
+  ngDoCheck() { console.log("ngDoCheck"); }
+  ngOnChanges(changes: SimpleChanges) {
     console.log("ngOnChanges", changes);
   }
-  ngAfterContentChecked(){console.log("ngAfterContentChecked");}
-  ngAfterContentInit(){console.log("ngAfterContentInit");}
-  ngAfterViewChecked(){console.log("ngAfterViewChecked");}
-  ngAfterViewInit(){console.log("ngAfterViewInit");}
-  ngOnDestroy(){console.log("ngOnDestroy");}
-
-  ngOnInit() {console.log("ngOnInit");  }
+  ngAfterContentChecked() { console.log("ngAfterContentChecked"); }
+  ngAfterContentInit() { console.log("ngAfterContentInit"); }
+  ngAfterViewChecked() { console.log("ngAfterViewChecked"); }
+  ngAfterViewInit() { console.log("ngAfterViewInit"); }
+  ngOnDestroy() { console.log("ngOnDestroy"); }
+  ngOnInit() { console.log("ngOnInit"); }
 
 }
