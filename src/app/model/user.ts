@@ -1,3 +1,5 @@
+import { Review } from "./review";
+
 export interface User{
     firstName : string;
     lastName : string;
@@ -7,4 +9,5 @@ export interface User{
     company : string;
     image : string;
     vote : number;
+    reviews : Review[];
 }

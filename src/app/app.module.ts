@@ -7,6 +7,12 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { UserInfoComponent } from './user/user-info/user-info.component';
 import { UserImgComponent } from './user/user-img/user-img.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { UnlessDirective } from './directives/unless.directive';
+import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
+import { NationalCodePipe } from './pipes/nationalcode.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
+import { LoginComponent } from './auth/login/login.component';
 
 
 @NgModule({
@@ -14,7 +20,13 @@ import { UserImgComponent } from './user/user-img/user-img.component';
     AppComponent,
     UserComponent,
     UserInfoComponent,
-    UserImgComponent
+    UserImgComponent,
+    HighlightDirective,
+    UnlessDirective,
+    PipeDemoComponent,
+    NationalCodePipe,
+    FilterPipe,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -4,3 +4,14 @@ npm i @angular/cli@1.7 -g
 ng new <PROJECT_NAME>
 cd <PROJECT_NAME>
 ng serve
+ng generate component <COMP_NAME>
+	ng g c user/user-info --spec false
+ng generate directive <DIRECTIVE_NAME>
+	ng g d directives/unless --spec false
+ng generate pipe <PIPE_NAME>
+	ng g p pipes/filter --spec false
+
+
+
+
+synergy2411@outlook.com
