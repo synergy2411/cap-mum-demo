@@ -10,6 +10,7 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import { User } from '../../model/user';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-user-info',
@@ -28,6 +29,15 @@ export class UserInfoComponent
   tab : number =1;
   @Input('user') user: User;
   @Input("demo") demo: any;
+
+  addReview(user : User, reviewForm : NgForm){
+    let newReview = {
+      stars : reviewForm.value.stars,
+      body : reviewForm.value.body,
+      author : reviewForm.value.author
+    }
+    user.reviews.push(newReview);
+  }
 
   myColor = "aqua";
   myClasses = {

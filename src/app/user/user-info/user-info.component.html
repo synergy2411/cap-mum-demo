@@ -33,7 +33,7 @@
 
 <br><br>
 
-<ul class="nav nav-pills">
+<ul class="nav nav-tabs">
     <li><button class="btn btn-warning btn-sm" (click)="tab=1">Show Reviews</button></li>
     <li><button class="btn btn-warning btn-sm" (click)="tab=2">Add Review</button></li>
 </ul>
@@ -51,18 +51,18 @@
 
     </div>
     <div *ngIf="tab==2"> 
-        <form class="well">
+        <form class="well" #reviewForm="ngForm">
             <div class="form-group">
-                <select name="stars" class="form-control">
+                <select name="stars" class="form-control" ngModel>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
-                <textarea name="body" class="form-control" cols="30" rows="10"></textarea>
-                <input type="email" class="form-control" name="author">
-                <button class="btn btn-sm btn-block">Add Review</button>
+                <textarea name="body" class="form-control" cols="30" rows="10" ngModel></textarea>
+                <input type="email" class="form-control" name="author" ngModel>
+                <button class="btn btn-sm btn-block" (click)="addReview(user, reviewForm)">Add Review</button>
             </div>
         </form>
     </div>
