@@ -13,10 +13,15 @@ export class RegisterComponent implements OnInit {
     Validators.minLength(6)
   ]);
   password = new FormControl('', [
-    Validators.required
+    Validators.required,
+    this.hasExclamation
   ]);
-
   registerForm : FormGroup;
+
+  hasExclamation(input : FormControl){
+    const excl = input.value.indexOf("!") >= 0;
+    return excl ?  null : {'needExclamation' : true} 
+  }
 
   register(){
     console.log(this.registerForm);

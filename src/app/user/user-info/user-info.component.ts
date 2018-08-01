@@ -11,6 +11,7 @@ import {
 } from '@angular/core';
 import { User } from '../../model/user';
 import { NgForm } from '@angular/forms';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-user-info',
@@ -45,7 +46,11 @@ export class UserInfoComponent
     'border' : true
   }
 
-  // constructor() { console.log("constructor") }
+   constructor(public dataService : DataService) { }
+   increase(){
+     this.dataService.counter++;
+   }
+
   // ngDoCheck() { console.log("ngDoCheck"); }
   // ngOnChanges(changes: SimpleChanges) {
   //   console.log("ngOnChanges", changes);

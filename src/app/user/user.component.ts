@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { USER_DATA } from '../data/mock';
+// import { USER_DATA } from '../data/mock';
 import { User } from '../model/user';
+import { DataService } from '../services/data.service';
 
 @Component({    
     selector : 'app-user',
@@ -17,9 +18,10 @@ export class UserComponent{
         alert(`${user.firstName} is working with ${user.company}!!!` );
     }
 
-    constructor(){}
+    constructor(private dataService : DataService){}
     ngOnInit(){
-        this.users = USER_DATA;
+        // this.users = USER_DATA;
+        this.users = this.dataService.getUserData();
     }
 
 }

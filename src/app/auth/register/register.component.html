@@ -24,6 +24,15 @@
         name="password" 
         class="form-control"
         [formControl]="password">
+        <div [hidden]="password.valid || password.untouched">
+          Some Problem with password !
+          <div [hidden]="!password.hasError('required')">
+            Password is madatory field !
+          </div>
+          <div [hidden]="!password.hasError('needExclamation')">
+            Password must have Exclamation mark !
+          </div>
+        </div>
     </div>
     <button class="btn btn-primary btn-block" (click)="register()">Register</button>
   </form>
