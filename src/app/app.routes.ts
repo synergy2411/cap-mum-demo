@@ -4,6 +4,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
 import { ObsDemoComponent } from './obs-demo/obs-demo.component';
 import { UserComponent } from './user/user.component';
+import { LoginGaurdService } from './services/login-gaurd.service';
 
 export const APP_ROUTES : Routes = [
     {
@@ -24,6 +25,7 @@ export const APP_ROUTES : Routes = [
         component :ObsDemoComponent
     },{
         path : 'user',
+        canActivate : [ LoginGaurdService ],
         component : UserComponent
     },{
         path : "**",

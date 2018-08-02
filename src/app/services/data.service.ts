@@ -24,8 +24,8 @@ export class DataService {
     }
     getHttpClientApiData() {
 
-        this.httpClient.get<User[]>("https://cap-mum-demo.firebaseio.com/userdata.json")
-            .subscribe(users => console.log("GetHttpClientApiData : ", users));
+       return this.httpClient.get<User[]>("https://cap-mum-demo.firebaseio.com/userdata.json")
+           // .subscribe(users => console.log("GetHttpClientApiData : ", users));
 
         // this.httpClient.get<User[]>("https://cap-mum-demo.firebaseio.com/userdata.json",{
         //     params : new HttpParams().set("auth", this.authService.getToken()),
