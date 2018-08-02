@@ -5,7 +5,7 @@ import { DataService } from '../../services/data.service';
   selector: 'app-user-img',
   templateUrl: './user-img.component.html',
   styleUrls: ['./user-img.component.css'],
-  providers : [DataService]
+  //providers : [DataService]
 })
 export class UserImgComponent implements OnInit {
 
