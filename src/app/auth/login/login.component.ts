@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
 
   getApiData(){
     this.dataService.getApiData();
+    this.dataService.getHttpClientApiData();
   }
   constructor(private authService : AuthService,
           private dataService : DataService) { }

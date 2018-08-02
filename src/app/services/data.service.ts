@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { USER_DATA } from '../data/mock';
 import { Http } from '@angular/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { User } from '../model/user';
 import { AuthService } from './auth.service';
@@ -21,7 +22,13 @@ export class DataService {
             .map((response) => <User[]>response.json())
             .subscribe(response=>console.log("API Response : ",response));
     }
+    getHttpClientApiData(){
+        this.httpClient.get<User[]>("https://cap-mum-demo.firebaseio.com/userdata.json",{
+            params : new HttpParams().set("auth", this.authService.getToken())
+        }).subscribe(users => console.log("getHttpClientApiData : ", users));
+    }
     constructor(private http: Http,
+                private httpClient :HttpClient,
                 private authService : AuthService) { }
 }
 
