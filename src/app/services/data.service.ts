@@ -1,4 +1,4 @@
-import { Injectable, text } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { USER_DATA } from '../data/mock';
 import { Http } from '@angular/http';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';

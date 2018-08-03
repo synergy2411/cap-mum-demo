@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
+import { JSONP_ERR_WRONG_RESPONSE_TYPE } from '@angular/common/http/src/jsonp';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
@@ -12,18 +14,20 @@ export class AuthService {
   }
 
   login(username, password){
-    firebase.auth().signInWithEmailAndPassword(username,password)
-      .then(response=>{
-        firebase.auth().currentUser.getIdToken()
-          .then(token => {
-            this.token = token;
-            console.log(token);
-          })
-        console.log(response);
-      })
-      .catch(err=>console.log(err))
+   return firebase.auth().signInWithEmailAndPassword(username,password);
+      // .then(response=>{
+       
+      //   firebase.auth().currentUser.getIdToken()
+      //     .then(token => {
+      //       this.token = token;
+      //       console.log(token);
+      //       this.router.navigate(['/obs']);
+      //     })
+      //   console.log(response);
+      // })
+      // .catch(err=>console.log(err))
   }
-  constructor() { }
+  constructor(private router : Router) { }
 
   getToken(){
     return this.token;

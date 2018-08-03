@@ -1,5 +1,5 @@
 https://github.com/synergy2411/cap-mum-demo
-
+ravindra.lohakare@capgemini.com
 npm i @angular/cli@1.7 -g
 ng new <PROJECT_NAME>
 cd <PROJECT_NAME>
@@ -10,8 +10,8 @@ ng generate directive <DIRECTIVE_NAME>
 	ng g d directives/unless --spec false
 ng generate pipe <PIPE_NAME>
 	ng g p pipes/filter --spec false
+ng generate service <SERVICE_NAME>
+	ng g s services/auth  --spec false
+	ng g s services/auth-interceptor --spec false
 
-
-
-
-synergy2411@outlook.com
+npm install firebase --save
