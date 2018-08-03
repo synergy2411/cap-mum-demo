@@ -34,7 +34,7 @@ export const APP_ROUTES : Routes = [
         path : 'products',
         component : ProductComponent,
         children : [{
-            path : "overview",
+            path : "overview/:id",
             component : OverviewComponent
         },{
             path : 'specification',
