@@ -26,6 +26,14 @@ export class LoginComponent implements OnInit {
     //console.log("-- FORM --", f);
   }
 
+  logout(){
+    this.authService.logout()
+      .then(()=>{
+        this.authService.token = null;
+      })
+      .catch(err=>console.log(err));
+  }
+
   getApiData(){
     this.dataService.getApiData();
     this.dataService.getHttpClientApiData();

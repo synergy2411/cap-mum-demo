@@ -23,6 +23,9 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { LoggerInterceptorService } from './services/logger-interceptor.service';
 import { APP_ROUTES } from './app.routes';
 import { LoginGaurdService } from './services/login-gaurd.service';
+import { ProductComponent } from './product/product.component';
+import { OverviewComponent } from './product/overview/overview.component';
+import { SpecificationComponent } from './product/specification/specification.component';
 
 
 @NgModule({
@@ -38,7 +41,10 @@ import { LoginGaurdService } from './services/login-gaurd.service';
     FilterPipe,
     LoginComponent,
     RegisterComponent,
-    ObsDemoComponent
+    ObsDemoComponent,
+    ProductComponent,
+    OverviewComponent,
+    SpecificationComponent
   ],
   imports: [
     BrowserModule,

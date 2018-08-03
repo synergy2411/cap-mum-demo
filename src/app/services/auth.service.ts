@@ -37,4 +37,7 @@ export class AuthService {
     return this.token != null;
   }
   
+  logout(){
+    return firebase.auth().signOut();
+  }
 }
