@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-specification',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SpecificationComponent implements OnInit {
 
-  constructor() { }
+  page_no : number;
+
+  constructor(private route : ActivatedRoute) {
+    this.route.queryParams.subscribe(params=>{
+      this.page_no = +params['page_no']
+    })
+   }
 
   ngOnInit() {
   }

@@ -1,8 +1,8 @@
 <div class="well">
   <h2>Product works!</h2>
   <ul class="nav nav-pills">
-    <li><a [routerLink]="['overview', 5]">Product Overview</a></li>
-    <li><a [routerLink]="['specification']">Product Specification</a></li>
+    <li><a [routerLink]="['overview', 5, 'iPhone']">Product Overview</a></li>
+    <li><a [routerLink]="['specification']" [queryParams]="{'page_no' : 101}">Product Specification</a></li>
   </ul>
   <br><br>
   <router-outlet></router-outlet>
